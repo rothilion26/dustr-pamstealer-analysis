@@ -1,0 +1,26 @@
+type,value,role,confidence,first_seen,notes
+domain,dustr[.]app,lure site,high,2026-10-07,aged domain (5y; Tranco top-1M); possibly compromised or re-registered
+domain,keychainagent[.]pro,payload delivery,high,2026-10-07,Cloudflare; LE cert 2026-10-07T08:37:58Z
+url,hxxps://keychainagent[.]pro/29j11f/mxgEV2s0Jccp,stage 1 JXA loader,high,2026-10-16,
+url,hxxps://keychainagent[.]pro/29j11f/r5fA7gM60BzO,stage 3 Rust agent,high,2026-10-16,served only to CFNetwork-style User-Agent
+url,hxxps://keychainagent[.]pro/29j11f/XgUTcEz6e649,related delivery path,medium,2026-10-11,seen in urlscan (hybridanalysis tag)
+domain,gatewaysync[.]pro,C2,high,2026-10-07,LE cert 4 s after keychainagent[.]pro; decrypted from stage 3 config
+url,hxxps://gatewaysync[.]pro/api/sync,C2 endpoint,high,2026-10-16,authenticated config string; not observed in traffic
+domain,machabits[.]info,earlier lure (same X account),medium,2026-09-29,VT 3/92
+ip,85.137.52[.]128,non-Cloudflare origin of machabits[.]info,medium,2026-10-01,AS43641 SOLLUTIUM EU (NL); shared hosting
+domain,macspare[.]app,candidate (same IP),low,2026-10-13,unverified
+domain,macnews[.]info,candidate (same IP),low,2026-09-22,unverified
+ethereum,0x33DfCf9123Bf44B84f53049373D0D22D0270693d,config contract (EtherHiding),high,2026-10-16,authenticated config string
+x_account,@MacHabits,ad publisher,medium,2026-10,per prior research and lure source
+sha256,08d9c67ae8f77e1e495606d002b8ada735553c5f01dfd5a927aba3967117848a,stage 1 JXA loader (136105 B),high,2026-10-16,
+sha256,094be93a4fdd3ef075959fb4bd3333f66e31abd1254f66ebaa0ce9460dc7b84a,stage 3 universal Mach-O (2044624 B),high,2026-10-16,may change per download
+sha256,02225673558a518658ac12b54591b33a6e459dcc95f25546e839a291c35c146b,stage 3 arm64 slice,high,2026-10-16,
+sha256,3de269d560df00eef46b96a05af3861b69ec5d881da6722a4d8dc7bafa9c6eef,embedded keychain helper kh_tmp,high,2026-10-16,
+cdhash,5498e8cd26ea6083f1867249beff52129b3eaddc,stage 3 (identifier agent),high,2026-10-16,ad hoc
+cdhash,0e8882223909b443bb208f62b06e18e096a2b331,kh_tmp,high,2026-10-16,ad hoc
+lc_uuid,4AC4E1F7-446B-3549-9A69-6F7DDD4E260F,stage 3 arm64,high,2026-10-16,
+lc_uuid,BD84656B-A233-358F-B95E-16BF999D52FA,stage 3 x86_64,high,2026-10-16,
+path,~/Library/Caches/com.apple.finder/Finder.app,fake bundle,high,2026-10-16,real Finder lives in /System/Library/CoreServices
+path,~/Library/Caches/com.apple.finder/Finder.app/Contents/MacOS/B56FC099,stage 3 executable,high,2026-10-16,name varies per build
+bundle_id,apple.finder.assistant,fake bundle ID,high,2026-10-16,genuine Finder is com.apple.finder
+string,detox,campaign tag in config,high,2026-10-16,

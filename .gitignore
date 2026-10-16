@@ -1,0 +1,24 @@
+# Never commit live samples or anything decrypted from them.
+samples/
+*.bin
+*.inert
+*.macho
+*.dmg
+*.zip
+*.scpt
+payload*
+stage*_raw*
+*.bak
+
+# Tool output that can contain sample bytes
+ghidra_proj*/
+decompiled*/
+disasm*.txt
+strings*.txt
+arrays.json
+
+# Local environments
+.venv/
+venv/
+__pycache__/
+.DS_Store

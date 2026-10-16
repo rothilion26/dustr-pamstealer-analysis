@@ -1,0 +1,207 @@
+{
+  "campaign": "Dustr (PamStealer variant)",
+  "defanged": true,
+  "generated": "2026-10-17",
+  "indicators": [
+    {
+      "type": "domain",
+      "value": "dustr[.]app",
+      "role": "lure site",
+      "confidence": "high",
+      "first_seen": "2026-10-07",
+      "notes": "aged domain (5y; Tranco top-1M); possibly compromised or re-registered"
+    },
+    {
+      "type": "domain",
+      "value": "keychainagent[.]pro",
+      "role": "payload delivery",
+      "confidence": "high",
+      "first_seen": "2026-10-07",
+      "notes": "Cloudflare; LE cert 2026-10-07T08:37:58Z"
+    },
+    {
+      "type": "url",
+      "value": "hxxps://keychainagent[.]pro/29j11f/mxgEV2s0Jccp",
+      "role": "stage 1 JXA loader",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "url",
+      "value": "hxxps://keychainagent[.]pro/29j11f/r5fA7gM60BzO",
+      "role": "stage 3 Rust agent",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "served only to CFNetwork-style User-Agent"
+    },
+    {
+      "type": "url",
+      "value": "hxxps://keychainagent[.]pro/29j11f/XgUTcEz6e649",
+      "role": "related delivery path",
+      "confidence": "medium",
+      "first_seen": "2026-10-11",
+      "notes": "seen in urlscan (hybridanalysis tag)"
+    },
+    {
+      "type": "domain",
+      "value": "gatewaysync[.]pro",
+      "role": "C2",
+      "confidence": "high",
+      "first_seen": "2026-10-07",
+      "notes": "LE cert 4 s after keychainagent[.]pro; decrypted from stage 3 config"
+    },
+    {
+      "type": "url",
+      "value": "hxxps://gatewaysync[.]pro/api/sync",
+      "role": "C2 endpoint",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "authenticated config string; not observed in traffic"
+    },
+    {
+      "type": "domain",
+      "value": "machabits[.]info",
+      "role": "earlier lure (same X account)",
+      "confidence": "medium",
+      "first_seen": "2026-09-29",
+      "notes": "VT 3/92"
+    },
+    {
+      "type": "ip",
+      "value": "85.137.52[.]128",
+      "role": "non-Cloudflare origin of machabits[.]info",
+      "confidence": "medium",
+      "first_seen": "2026-10-01",
+      "notes": "AS43641 SOLLUTIUM EU (NL); shared hosting"
+    },
+    {
+      "type": "domain",
+      "value": "macspare[.]app",
+      "role": "candidate (same IP)",
+      "confidence": "low",
+      "first_seen": "2026-10-13",
+      "notes": "unverified"
+    },
+    {
+      "type": "domain",
+      "value": "macnews[.]info",
+      "role": "candidate (same IP)",
+      "confidence": "low",
+      "first_seen": "2026-09-22",
+      "notes": "unverified"
+    },
+    {
+      "type": "ethereum",
+      "value": "0x33DfCf9123Bf44B84f53049373D0D22D0270693d",
+      "role": "config contract (EtherHiding)",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "authenticated config string"
+    },
+    {
+      "type": "x_account",
+      "value": "@MacHabits",
+      "role": "ad publisher",
+      "confidence": "medium",
+      "first_seen": "2026-10",
+      "notes": "per prior research and lure source"
+    },
+    {
+      "type": "sha256",
+      "value": "08d9c67ae8f77e1e495606d002b8ada735553c5f01dfd5a927aba3967117848a",
+      "role": "stage 1 JXA loader (136105 B)",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "sha256",
+      "value": "094be93a4fdd3ef075959fb4bd3333f66e31abd1254f66ebaa0ce9460dc7b84a",
+      "role": "stage 3 universal Mach-O (2044624 B)",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "may change per download"
+    },
+    {
+      "type": "sha256",
+      "value": "02225673558a518658ac12b54591b33a6e459dcc95f25546e839a291c35c146b",
+      "role": "stage 3 arm64 slice",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "sha256",
+      "value": "3de269d560df00eef46b96a05af3861b69ec5d881da6722a4d8dc7bafa9c6eef",
+      "role": "embedded keychain helper kh_tmp",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "cdhash",
+      "value": "5498e8cd26ea6083f1867249beff52129b3eaddc",
+      "role": "stage 3 (identifier agent)",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "ad hoc"
+    },
+    {
+      "type": "cdhash",
+      "value": "0e8882223909b443bb208f62b06e18e096a2b331",
+      "role": "kh_tmp",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "ad hoc"
+    },
+    {
+      "type": "lc_uuid",
+      "value": "4AC4E1F7-446B-3549-9A69-6F7DDD4E260F",
+      "role": "stage 3 arm64",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "lc_uuid",
+      "value": "BD84656B-A233-358F-B95E-16BF999D52FA",
+      "role": "stage 3 x86_64",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    },
+    {
+      "type": "path",
+      "value": "~/Library/Caches/com.apple.finder/Finder.app",
+      "role": "fake bundle",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "real Finder lives in /System/Library/CoreServices"
+    },
+    {
+      "type": "path",
+      "value": "~/Library/Caches/com.apple.finder/Finder.app/Contents/MacOS/B56FC099",
+      "role": "stage 3 executable",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "name varies per build"
+    },
+    {
+      "type": "bundle_id",
+      "value": "apple.finder.assistant",
+      "role": "fake bundle ID",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": "genuine Finder is com.apple.finder"
+    },
+    {
+      "type": "string",
+      "value": "detox",
+      "role": "campaign tag in config",
+      "confidence": "high",
+      "first_seen": "2026-10-16",
+      "notes": ""
+    }
+  ]
+}
